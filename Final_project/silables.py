@@ -69,4 +69,8 @@ def silables(words):
                 message += " "
                 consCount = 0
     
-    return message.split("\n")
+    slbs = message.split("\n")
+    for i, x in enumerate(slbs):
+        slbs[i] = x.strip()
+        
+    return slbs

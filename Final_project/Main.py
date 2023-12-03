@@ -5,6 +5,7 @@ from rich.prompt import Prompt
 from rich.prompt import Confirm
 import re
 import silables as sb
+import accents as acns
 
 #inicio-----------------------------------------------------
 console = Console()
@@ -21,7 +22,11 @@ console.print(md)
 words = Prompt.ask("• Introduce un texto")
 #words = words.replace
 separated_words = sb.silables(words)
+tonics = acns.tonics(separated_words)
+types = acns.clasification(tonics)
 
 #procesa y formatea la salida de datos--------------------------------------
 console.print(f"'{words}'")
 console.print(separated_words)
+console.print(f"tonics: '{tonics}'")
+console.print(f"types: '{types}'")
